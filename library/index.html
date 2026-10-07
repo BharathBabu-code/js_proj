@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Library</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="app-header">
+        <h1>My Library</h1>
+        <button id="open-modal-btn" class="primary-btn">+ New Book</button>
+    </header>
+
+    <main id="library-grid" class="grid-container"></main>
+
+    <dialog id="book-modal" class="modal">
+        <form id="new-book-form" class="modal-form">
+            <h2>Add a New Book</h2>
+            
+            <div class="input-group">
+                <label for="title">Title</label>
+                <input type="text" id="title" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="author">Author</label>
+                <input type="text" id="author" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="pages">Pages</label>
+                <input type="number" id="pages" required min="1">
+            </div>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="is-read">
+                <label for="is-read">I have read this book</label>
+            </div>
+            
+            <div class="modal-actions">
+                <button type="button" id="close-modal-btn" class="secondary-btn">Cancel</button>
+                <button type="submit" class="primary-btn">Add Book</button>
+            </div>
+        </form>
+    </dialog>
+</body>
+</html>
