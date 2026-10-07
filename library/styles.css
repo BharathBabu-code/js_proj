@@ -1,0 +1,96 @@
+:root {
+    --bg-main: #0d0607;
+    --bg-card: #1c0b0f;
+    --accent: #6e1423;
+    --text-main: #f0dddd;
+    --text-muted: #94777c;
+    --danger: #a52538;
+    --success: #4f7959;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    padding: 40px;
+}
+
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* --- GRID LAYOUT --- */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* --- BOOK CARDS --- */
+.book-card {
+    background-color: var(--bg-card);
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 5px solid var(--accent);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.book-title { font-size: 1.25rem; font-weight: bold; }
+.book-author { color: var(--text-muted); font-style: italic; }
+.book-pages { font-size: 0.9rem; margin-bottom: 15px; }
+
+.card-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: auto; /* Pushes buttons to the bottom of the card */
+}
+
+/* --- BUTTONS --- */
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: filter 0.2s;
+}
+button:hover { filter: brightness(1.2); }
+
+.primary-btn { background-color: var(--accent); color: white; }
+.secondary-btn { background-color: transparent; color: var(--text-muted); border: 1px solid var(--text-muted); }
+.danger-btn { background-color: var(--danger); color: white; flex: 1; }
+.toggle-btn { flex: 1; }
+.status-read { background-color: var(--success); color: white; }
+.status-unread { background-color: var(--bg-main); color: var(--text-muted); border: 1px solid var(--text-muted); }
+
+/* --- MODAL DIALOG --- */
+.modal {
+    margin: auto; /* Centers the dialog */
+    padding: 30px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    color: var(--text-main);
+    width: 400px;
+    max-width: 90%;
+}
+
+.modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.7); /* Dims the rest of the screen */
+}
+
+.modal-form { display: flex; flex-direction: column; gap: 20px; }
+.input-group { display: flex; flex-direction: column; gap: 5px; }
+.input-group input { padding: 10px; border-radius: 4px; border: none; outline: none; }
+.checkbox-group { display: flex; align-items: center; gap: 10px; }
+.modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 10px; }
