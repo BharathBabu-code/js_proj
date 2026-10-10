@@ -1,0 +1,145 @@
+:root {
+    --bg-main: #12121c;
+    --bg-card: #252542;
+    --accent: #00adb5;
+    --text-main: #eeeeee;
+    --text-muted: #9ba4b5;
+    --x-color: #ff4757; 
+    --o-color: #2ed573; 
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 600px;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: var(--accent);
+}
+
+/*Scoreboard Flexbox Layout*/
+.scoreboard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 30px;
+    background-color: var(--bg-card);
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.player-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    opacity: 0.5; 
+    transition: opacity 0.3s;
+}
+
+.player-info.active {
+    opacity: 1; 
+}
+
+.player-info input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--text-muted);
+    color: var(--text-main);
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    width: 100px;
+    outline: none;
+}
+
+.player-info input:focus {
+    border-bottom-color: var(--accent);
+}
+
+.marker { font-size: 1.5rem; font-weight: bold; }
+.x-marker { color: var(--x-color); }
+.o-marker { color: var(--o-color); }
+
+.status-display {
+    font-weight: bold;
+    color: var(--text-muted);
+}
+
+.board-container {
+    display: grid;
+    /* Forces exactly 3 columns of equal width */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 30px;
+}
+
+/* Aspect ratio hack: Using padding-bottom to force perfect squares regardless of screen width */
+.cell {
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    aspect-ratio: 1 / 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: background-color 0.2s;
+}
+
+.cell:empty:hover {
+    background-color: rgba(0, 173, 181, 0.1); 
+}
+
+.cell.x { color: var(--x-color); }
+.cell.o { color: var(--o-color); }
+
+.primary-btn {
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: filter 0.2s;
+}
+
+.primary-btn:hover { filter: brightness(1.2); }
+
+.modal {
+    margin: auto;
+    padding: 40px;
+    background-color: var(--bg-card);
+    border: 2px solid var(--accent);
+    border-radius: 8px;
+    color: var(--text-main);
+    text-align: center;
+}
+
+.modal::backdrop { background-color: rgba(0, 0, 0, 0.8); }
+.modal h2 { margin-bottom: 20px; font-size: 2rem; }
