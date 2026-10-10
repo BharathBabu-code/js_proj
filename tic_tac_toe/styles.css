@@ -1,11 +1,11 @@
 :root {
-    --bg-main: #12121c;
-    --bg-card: #252542;
-    --accent: #00adb5;
-    --text-main: #eeeeee;
-    --text-muted: #9ba4b5;
-    --x-color: #ff4757; 
-    --o-color: #2ed573; 
+    --bg-main: #0d0a0f;
+    --bg-card: #1b141e;
+    --accent: #8b1e3f;
+    --text-main: #e8dfe8;
+    --text-muted: #928593;
+    --x-color: #a11d33;
+    --o-color: #665078;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
