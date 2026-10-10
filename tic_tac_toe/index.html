@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Tic Tac Toe</h1>
+        </header>
+
+        <main class="game-wrapper">
+            <div class="scoreboard">
+                <div class="player-info active" id="player1-card">
+                    <input type="text" id="player1-name" value="Bharath" maxlength="10">
+                    <span class="marker x-marker">X</span>
+                </div>
+                <div class="status-display" id="status-text">Game Start</div>
+                <div class="player-info" id="player2-card">
+                    <input type="text" id="player2-name" value="Guest" maxlength="10">
+                    <span class="marker o-marker">O</span>
+                </div>
+            </div>
+
+            <div class="board-container" id="gameboard">
+                <div class="cell" data-index="0"></div>
+                <div class="cell" data-index="1"></div>
+                <div class="cell" data-index="2"></div>
+                <div class="cell" data-index="3"></div>
+                <div class="cell" data-index="4"></div>
+                <div class="cell" data-index="5"></div>
+                <div class="cell" data-index="6"></div>
+                <div class="cell" data-index="7"></div>
+                <div class="cell" data-index="8"></div>
+            </div>
+
+            <button id="restart-btn" class="primary-btn">Restart Game</button>
+        </main>
+
+        <dialog id="result-modal" class="modal">
+            <h2 id="result-message">Player Wins!</h2>
+            <button id="modal-restart-btn" class="primary-btn">Play Again</button>
+        </dialog>
+    </div>
+</body>
+</html>
